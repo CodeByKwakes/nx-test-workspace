@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'nx-test-workspace-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mvp-app';
+  package = require('../../package.json')
+  title = `mvp-app v${this.package.version}`;
 }
