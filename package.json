@@ -21,12 +21,10 @@
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
-    "update": "ng update @nrwl/workspace",
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help",
-    "commitmsg": "commitlint -e $GIT_PARAMS"
+    "help": "nx help"
   },
   "private": true,
   "dependencies": {
@@ -81,5 +79,11 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "update": "ng update @nrwl/workspace"
+    }
   }
 }
