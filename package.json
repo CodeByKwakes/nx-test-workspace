@@ -82,8 +82,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
-      "update": "ng update @nrwl/workspace"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
