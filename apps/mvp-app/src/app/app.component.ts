@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   package = require('../../package.json')
-  title = `mvp-app v${this.package.version}`;
+  title = `mvp-app version no: ${this.package.version}`;
 }
