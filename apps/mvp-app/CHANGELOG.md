@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/KwakesProject/nx-test-workspace/compare/mvp-app@0.17.0...mvp-app@0.18.0) (2019-10-15)
+
+
+### Features
+
+* service added and working ([342ae00](https://github.com/KwakesProject/nx-test-workspace/commit/342ae00e6c1db05b8273ffd95a789fa5843948c6))
+
+
+
+
+
 # [0.17.0](https://github.com/KwakesProject/nx-test-workspace/compare/mvp-app@0.6.0...mvp-app@0.17.0) (2019-10-15)
 
 
