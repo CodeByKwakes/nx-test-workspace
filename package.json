@@ -25,7 +25,8 @@
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "commit-cz": "npx git-cz"
+    "commit-cz": "npx git-cz",
+    "release": "npx lerna version"
   },
   "private": true,
   "dependencies": {
