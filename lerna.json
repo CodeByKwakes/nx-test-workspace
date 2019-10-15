@@ -11,9 +11,9 @@
   },
   "changelog": {
     "labels": {
-      "feature": ":rocket: New Feature",
-      "core": ":earth_asia: Core",
-      "bug": ":bug: Bug Fix"
+      "feature": "New Feature",
+      "core": "Core",
+      "bug": "Bug Fix"
     }
   }
 }
