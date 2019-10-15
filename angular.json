@@ -1,6 +1,125 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "mvp-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/mvp-app",
+      "sourceRoot": "apps/mvp-app/src",
+      "prefix": "nx-test-workspace",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mvp-app",
+            "index": "apps/mvp-app/src/index.html",
+            "main": "apps/mvp-app/src/main.ts",
+            "polyfills": "apps/mvp-app/src/polyfills.ts",
+            "tsConfig": "apps/mvp-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/mvp-app/src/favicon.ico",
+              "apps/mvp-app/src/assets"
+            ],
+            "styles": ["apps/mvp-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mvp-app/src/environments/environment.ts",
+                  "with": "apps/mvp-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mvp-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mvp-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mvp-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mvp-app/tsconfig.app.json",
+              "apps/mvp-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/mvp-app/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/mvp-app/jest.config.js",
+            "tsConfig": "apps/mvp-app/tsconfig.spec.json",
+            "setupFile": "apps/mvp-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mvp-app-e2e": {
+      "root": "apps/mvp-app-e2e",
+      "sourceRoot": "apps/mvp-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/mvp-app-e2e/cypress.json",
+            "tsConfig": "apps/mvp-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "mvp-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mvp-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/mvp-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/mvp-app-e2e/**"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
@@ -12,5 +131,6 @@
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
     }
-  }
+  },
+  "defaultProject": "mvp-app"
 }

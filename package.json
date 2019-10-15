@@ -21,11 +21,11 @@
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
-    "update": "ng update @nrwl/workspace",
     "update:check": "ng update",
     "workspace-schematic": "nx workspace-schematic",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "commit-cz": "npx git-cz"
   },
   "private": true,
   "dependencies": {
@@ -37,33 +37,55 @@
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
-    "@nrwl/angular": "^8.4.10",
+    "@nrwl/angular": "^8.6.0",
     "@types/core-js": "^2.5.2",
     "@types/zone.js": "^0.5.12",
     "core-js": "^2.5.4",
-    "rxjs": "~6.4.0",
+    "rxjs": "~6.5.3",
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.800.1",
-    "@angular/cli": "8.1.1",
+    "@angular-devkit/build-angular": "^0.803.3",
+    "@angular/cli": "8.3.9",
     "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "^8.0.0",
-    "@nrwl/cypress": "8.4.10",
-    "@nrwl/jest": "8.4.10",
-    "@nrwl/workspace": "8.4.10",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@nrwl/cypress": "8.6.0",
+    "@nrwl/jest": "8.6.0",
+    "@nrwl/workspace": "8.6.0",
     "@types/jest": "^24.0.9",
     "@types/node": "~8.9.4",
     "codelyzer": "~5.0.1",
+    "cross-env": "^6.0.3",
     "cypress": "3.4.0",
+    "cz-lerna-changelog": "^2.0.2",
     "dotenv": "6.2.0",
     "eslint": "6.1.0",
+    "husky": "^3.0.9",
     "jest": "24.1.0",
     "jest-preset-angular": "7.0.0",
+    "lerna": "^3.17.0",
+    "lerna-changelog": "^0.8.2",
     "prettier": "1.16.4",
     "ts-jest": "24.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.4.5"
+    "typescript": "~3.5.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
   }
 }

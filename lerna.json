@@ -1,0 +1,19 @@
+{
+  "packages": ["apps/*", "libs/*"],
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true
+    },
+    "version": {
+      "message": "chore(release): publish"
+    }
+  },
+  "changelog": {
+    "labels": {
+      "feature": ":rocket: New Feature",
+      "core": ":earth_asia: Core",
+      "bug": ":bug: Bug Fix"
+    }
+  }
+}
