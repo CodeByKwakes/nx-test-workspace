@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class PageOneApiService {
 
-  constructor() { }
+  constructor() {
+    console.log('test');
+  }
 }
