@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/KwakesProject/nx-test-workspace/compare/mvp-app@0.18.2...mvp-app@1.0.0) (2019-10-15)
+
+
+### chore
+
+* home module added ([ab2da97](https://github.com/KwakesProject/nx-test-workspace/commit/ab2da978f2afa62eca728ceb9b3fd5005dc23b5e))
+
+
+### BREAKING CHANGES
+
+* new module added
+
+
+
+
+
+## [0.18.2](https://github.com/KwakesProject/nx-test-workspace/compare/mvp-app@0.18.1...mvp-app@0.18.2) (2019-10-15)
+
+
+### Bug Fixes
+
+* bug icon ([3e9433c](https://github.com/KwakesProject/nx-test-workspace/commit/3e9433cb3ca8d5e1ca6d3f58163ef1cec8d855df))
+
+
+
+
+
 ## [0.18.1](https://github.com/KwakesProject/nx-test-workspace/compare/mvp-app@0.18.0...mvp-app@0.18.1) (2019-10-15)
 
 

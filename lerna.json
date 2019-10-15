@@ -3,7 +3,8 @@
   "version": "independent",
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "yes": true
     },
     "version": {
       "message": "chore(release): publish"
@@ -11,9 +12,9 @@
   },
   "changelog": {
     "labels": {
-      "feature": ":rocket: New Feature",
-      "core": ":earth_asia: Core",
-      "bug": ":bug: Bug Fix"
+      "feature": "New Feature",
+      "core": "Core",
+      "bug": "Bug Fix"
     }
   }
 }
